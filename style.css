@@ -13,7 +13,7 @@ window#waybar {
 }
 
 tooltip {
-    background: rgba(30,30,46,0.5);
+    background: rgba(30,30,46,0.6);
     border-radius: 10px;
     border-width: 2px;
     border-style: solid;
@@ -32,18 +32,18 @@ tooltip {
 
 #workspaces button.focused {
     color: #a6adc8;
-    background: rgba(30,30,46,0.5);
+    background: rgba(30,30,46,0.6);
     border-radius: 10px;
 }
 
 #workspaces button.urgent {
     color: #11111b;
-    background: rgba(30,30,46,0.5);
+    background: rgba(30,30,46,0.6);
     border-radius: 10px;
 }
 
 #workspaces button:hover {
-    background: rgba(30,30,46,0.5);
+    background: rgba(30,30,46,0.6);
     color: #cdd6f4;
     border-radius: 10px;
 }
@@ -54,11 +54,11 @@ tooltip {
 #network,
 #workspaces,
 #tray {
-    background: rgba(30,30,46,0.5);
+    background: rgba(30,30,46,0.6);
     padding: 0px 10px;
     margin: 3px 0px;
     margin-top: 10px;
-    border: 1px solid #181825;
+    border: 2px solid #b4befe;
 }
 
 #tray {
@@ -67,7 +67,7 @@ tooltip {
 }
 
 #workspaces {
-    background: rgba(30,30,46,0.5);
+    background: rgba(30,30,46,0.6);
     border-radius: 10px;
     margin-left: 10px;
     padding-right: 0px;
@@ -78,7 +78,7 @@ tooltip {
     border-radius: 10px;
     margin-left: 60px;
     margin-right: 60px;
-    background: rgba(30,30,46,0.5);
+    background: rgba(30,30,46,0.6);
     padding: 0px 30px;
 }
 
@@ -91,22 +91,20 @@ tooltip {
 
 #pulseaudio {
     color: #eceff4;
-    border-left: 0px;
-    border-right: 0px;
     border-radius: 10px 0px 0px 10px;
+    border-right: 0px;
 }
 
 #pulseaudio.microphone {
     color: #eceff4;
     border-radius: 0px 10px 10px 0px;
-    border-left: 0px;
-    border-right: 0px;
     margin-right: 5px;
+    border-left: 0px;
+    border-right: 2px solid #b4befe;
 }
 
 #clock {
     color: #eceff4;
     border-radius: 10px;
     margin-right: 5px;
-    border-right: 0px;
 }
