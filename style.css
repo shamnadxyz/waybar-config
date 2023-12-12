@@ -50,6 +50,7 @@ tooltip {
 /* #backligh */
 #window,
 #clock,
+#bluetooth,
 #pulseaudio,
 #network,
 #workspaces,
@@ -59,6 +60,13 @@ tooltip {
     margin: 3px 0px;
     margin-top: 10px;
     border: 2px solid #b4befe;
+}
+
+#bluetooth {
+    color: #eceff4;
+    border-radius: 10px;
+    margin-right: 5px;
+    padding: 0px 10px;
 }
 
 #tray {
