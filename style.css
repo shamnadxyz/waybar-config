@@ -22,16 +22,16 @@ tooltip {
 
 #workspaces button {
     padding: 5px;
-    color: #313244;
+    color: #4C566A;
     margin-right: 5px;
 }
 
 #workspaces button.active {
-    color: #a6adc8;
+    color: #ECEFF4;
 }
 
 #workspaces button.focused {
-    color: #a6adc8;
+    color: #ECEFF4;
     background: rgba(30,30,46,0.6);
     border-radius: 10px;
 }

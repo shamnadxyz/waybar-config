@@ -40,6 +40,7 @@
     //     }
     // },
     "hyprland/workspaces": {
+        "disable-scroll": true,
         "format": "{icon}",
         "format-icons": {
             "1": "",
