@@ -11,6 +11,7 @@
     ],
     "modules-center": ["hyprland/window"],
     "modules-right": [
+        "tray",
         "network",
         "bluetooth",
         "pulseaudio",
@@ -88,6 +89,9 @@
         "on-scroll-up": "pamixer --default-source -i 5",
         "on-scroll-down": "pamixer --default-source -d 5",
         "scroll-step": 5
+    },
+    "tray": {
+        "icon-size": 14,
+        "spacing": 10
     }
 }
-
