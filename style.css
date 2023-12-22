@@ -53,67 +53,49 @@ tooltip {
 #network,
 #workspaces,
 #tray {
+    margin-top: 3px;
     background: rgba(30,30,46,0.6);
     padding: 0px 10px;
-    margin: 3px 0px;
-    margin-top: 10px;
     border: 2px solid #b4befe;
 }
 
 #bluetooth {
-    color: #eceff4;
     border-radius: 20px;
     margin-right: 5px;
-    padding: 0px 10px;
 }
 
 #tray {
-    border-radius: 20px;
     margin-right: 10px;
 }
 
 #workspaces {
-    background: rgba(30,30,46,0.6);
-    border-radius: 20px;
     margin-left: 5px;
-    padding-left : 4px;
-    padding-right: 0px;
 }
 
 #window {
-    border-radius: 20px;
-    margin-left: 60px;
-    margin-right: 60px;
-    background: rgba(30,30,46,0.6);
     padding: 0px 25px;
 }
 
 #network {
-    color: #eceff4;
     margin-right: 5px;
-    padding-right: 5px;
-    padding-left: 5px;
+    padding: 0px;
+    padding-left: 7px;
+    padding-right: 14px;
 }
 
 #pulseaudio {
-    color: #eceff4;
     border-radius: 20px 0px 0px 20px;
     padding: 0px 10px;
     border-right: 0px;
 }
 
 #pulseaudio.microphone {
-    color: #eceff4;
     border-radius: 0px 20px 20px 0px;
     margin-right: 5px;
     border-left: 0px;
+    padding: 0px 10px;
     border-right: 2px solid #b4befe;
-    padding: 0px 10px;
 }
-
 #clock {
-    color: #eceff4;
-    border-radius: 20px;
     margin-right: 5px;
-    padding: 0px 10px;
 }
