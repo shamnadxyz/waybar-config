@@ -1,3 +1,4 @@
+@import url("/home/null/.cache/wal/colors-waybar.css");
 * {
     border: none;
     border-radius: 20px;
@@ -9,26 +10,26 @@
 
 window#waybar {
     background: rgba(0,0,0,0);
-    color: #eceff4;
+    color: @foreground;
 }
 
 tooltip {
     background: rgba(30,30,46,0.6);
-    border: 2px solid #b4befe;
+    border: 2px solid @color7;
     border-radius: 20px;
 }
 
 #workspaces button {
-    color: #4C566A;
+    color: @color8;
     margin-right: 5px;
 }
 
 #workspaces button.active {
-    color: #ECEFF4;
+    color: @foreground;
 }
 
 #workspaces button.focused {
-    color: #ECEFF4;
+    color: @foreground;
     background: rgba(30,30,46,0.6);
     border-radius: 20px;
 }
@@ -53,9 +54,9 @@ tooltip {
 #workspaces,
 #tray {
     margin-top: 3px;
-    background: rgba(30,30,46,0.6);
+    background: rgba(30,30,30,0.6);
     padding: 3px 10px;
-    border: 2px solid #b4befe;
+    border: 2px solid @color7;
 }
 
 #bluetooth {
@@ -96,7 +97,7 @@ tooltip {
     margin-right: 5px;
     border-left: 0px;
     padding: 0px 10px;
-    border-right: 2px solid #b4befe;
+    border-right: 2px solid @color7;
 }
 #clock {
     margin-right: 5px;
