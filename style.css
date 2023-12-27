@@ -14,14 +14,14 @@ window#waybar {
 }
 
 tooltip {
-    background: rgba(30,30,46,0.6);
+    background: rgba(30,30,30,0.9);
     border: 2px solid @color7;
     border-radius: 20px;
 }
-
 #workspaces button {
     color: @color8;
     margin-right: 5px;
+    padding: 5px 5px;
 }
 
 #workspaces button.active {
@@ -30,18 +30,18 @@ tooltip {
 
 #workspaces button.focused {
     color: @foreground;
-    background: rgba(30,30,46,0.6);
+    background: rgba(30,30,30,0.6);
     border-radius: 20px;
 }
 
 #workspaces button.urgent {
     color: #11111b;
-    background: rgba(30,30,46,0.6);
+    background: rgba(30,30,30,0.6);
     border-radius: 20px;
 }
 
 #workspaces button:hover {
-    background: rgba(30,30,46,0.6);
+    background: rgba(30,30,30,0.6);
     color: #cdd6f4;
     border-radius: 20px;
 }
@@ -55,7 +55,7 @@ tooltip {
 #tray {
     margin-top: 3px;
     background: rgba(30,30,30,0.6);
-    padding: 3px 10px;
+    padding: 0px 10px;
     border: 2px solid @color7;
 }
 
@@ -66,7 +66,7 @@ tooltip {
 
 #tray {
     margin-right: 5px;
-    padding: 3px 7px; 
+    padding: 5px 7px; 
 }
 
 #workspaces {
@@ -81,14 +81,12 @@ tooltip {
 
 #network {
     margin-right: 5px;
-    padding: 0px;
     padding-left: 7px;
     padding-right: 14px;
 }
 
 #pulseaudio {
     border-radius: 20px 0px 0px 20px;
-    padding: 0px 10px;
     border-right: 0px;
 }
 
@@ -96,7 +94,6 @@ tooltip {
     border-radius: 0px 20px 20px 0px;
     margin-right: 5px;
     border-left: 0px;
-    padding: 0px 10px;
     border-right: 2px solid @color7;
 }
 #clock {

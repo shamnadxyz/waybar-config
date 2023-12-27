@@ -91,7 +91,6 @@
         "scroll-step": 5
     },
     "tray": {
-        "icon-size": 14,
-        "spacing": 10
+        "icon-size": 14
     }
 }
