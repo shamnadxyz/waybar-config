@@ -14,10 +14,11 @@ window#waybar {
 }
 
 tooltip {
-    background: rgba(30,30,30,0.9);
+    background: @background;
     border: 2px solid @color7;
-    border-radius: 20px;
+    border-radius: 10px;
 }
+
 #workspaces button {
     color: @color8;
     margin-right: 5px;
@@ -45,7 +46,6 @@ tooltip {
     color: #cdd6f4;
     border-radius: 20px;
 }
-/* #backligh */
 #window,
 #clock,
 #bluetooth,
