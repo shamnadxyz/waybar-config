@@ -15,7 +15,7 @@ window#waybar {
 
 tooltip {
     background: @background;
-    border: 2px solid @color7;
+    border: 2px solid @foreground;
     border-radius: 10px;
 }
 
@@ -56,7 +56,7 @@ tooltip {
     margin-top: 3px;
     background: rgba(30,30,30,0.6);
     padding: 0px 10px;
-    border: 2px solid @color7;
+    border: 2px solid @foreground;
 }
 
 #bluetooth {
@@ -94,7 +94,7 @@ tooltip {
     border-radius: 0px 20px 20px 0px;
     margin-right: 5px;
     border-left: 0px;
-    border-right: 2px solid @color7;
+    border-right: 2px solid @foreground;
 }
 #clock {
     margin-right: 5px;
