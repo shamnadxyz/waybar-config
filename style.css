@@ -13,34 +13,14 @@ window#waybar {
     color: @foreground;
 }
 
-
-#workspaces button {
-    color: @color8;
-    margin-right: 5px;
-    padding: 5px 5px;
-}
-
 #workspaces button.active {
     color: @foreground;
 }
 
 #workspaces button.focused {
     color: @foreground;
-    background: rgba(30,30,30,0.6);
-    border-radius: 20px;
 }
 
-#workspaces button.urgent {
-    color: #11111b;
-    background: rgba(30,30,30,0.6);
-    border-radius: 20px;
-}
-
-#workspaces button:hover {
-    background: rgba(30,30,30,0.6);
-    color: #cdd6f4;
-    border-radius: 20px;
-}
 #window,
 #clock,
 #bluetooth,
@@ -50,7 +30,7 @@ window#waybar {
 #tray {
     margin-top: 3px;
     background: rgba(30,30,30,0.6);
-    padding: 0px 10px;
+    padding: 5px 10px;
     border: 2px solid @foreground;
 }
 
@@ -70,10 +50,13 @@ tooltip {
     padding: 5px 7px; 
 }
 
+#workspaces  * {
+    padding: 0px 3px;
+}
 #workspaces {
     margin-left: 5px;
-    padding-left : 4px;
-    padding-right: 0px;
+    padding-left : 0px;
+    padding-right: 5px;
 }
 
 #window {
