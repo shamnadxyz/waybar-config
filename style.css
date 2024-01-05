@@ -13,11 +13,6 @@ window#waybar {
     color: @foreground;
 }
 
-tooltip {
-    background: @background;
-    border: 2px solid @foreground;
-    border-radius: 10px;
-}
 
 #workspaces button {
     color: @color8;
@@ -59,6 +54,12 @@ tooltip {
     border: 2px solid @foreground;
 }
 
+tooltip {
+    background: rgba(30,30,30,0.9);
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid @foreground;
+}
 #bluetooth {
     border-radius: 20px;
     margin-right: 5px;
@@ -98,4 +99,7 @@ tooltip {
 }
 #clock {
     margin-right: 5px;
+}
+#idle_inhibitor {
+    margin-right: 20px;
 }
