@@ -21,7 +21,7 @@ window#waybar {
     color: @foreground;
 }
 
-#window,
+/* #window, */
 #clock,
 #bluetooth,
 #pulseaudio,
@@ -36,7 +36,6 @@ window#waybar {
 
 tooltip {
     background: rgba(30,30,30,0.9);
-    padding: 10px;
     border-radius: 10px;
     border: 2px solid @foreground;
 }
@@ -59,9 +58,9 @@ tooltip {
     padding-right: 5px;
 }
 
-#window {
-    padding: 0px 25px;
-}
+/* #window { */
+/*     padding: 0px 25px; */
+/* } */
 
 #network {
     margin-right: 5px;
@@ -80,9 +79,7 @@ tooltip {
     border-left: 0px;
     border-right: 2px solid @foreground;
 }
-#clock {
-    margin-right: 5px;
-}
+
 #idle_inhibitor {
     margin-right: 20px;
 }
