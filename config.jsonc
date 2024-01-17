@@ -16,7 +16,7 @@
         "network",
         "bluetooth",
         "pulseaudio",
-        "pulseaudio#microphone",
+        "pulseaudio#microphone"
     ],
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -27,9 +27,10 @@
             "2": "",
             "3": "",
             "4": "",
+            "5": "",
             // "active": "",
             "default": ""
-        },
+        }
     },
     "clock": {
         "format": "{:%R}",
@@ -55,7 +56,7 @@
         "format": "",
         "format-disabled": "",
         "format-connected": " {device_alias}",
-        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%"
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
