@@ -1,51 +1,55 @@
 {
     "layer": "top",
-    "position": "top",
+    "position": "bottom",
     "mod": "dock",
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
-    "height": 0,
+    "spacing": 15,
+    "margin-bottom": 4,
+    "margin-left": 2,
+    "margin-right": 2,
     "modules-left": [
         "hyprland/workspaces"
     ],
-    "modules-center": ["clock"],
+    "modules-center": [],
     "modules-right": [
         "idle_inhibitor",
         "tray",
         "network",
         "bluetooth",
         "pulseaudio",
-        "pulseaudio#microphone"
+        "pulseaudio#microphone",
+        "clock"
     ],
     "hyprland/workspaces": {
         "disable-scroll": true,
         "format": "{icon}",
         "format-icons": {
-            // "1": "",
             "1": "",
             "2": "",
             "3": "",
             "4": "",
             "5": "",
             // "active": "",
-            "default": ""
+            // "default": ""
+            "default": ""
         }
     },
     "clock": {
-        "format": "{:%R}",
+        "format": "{: %R}",
         "timezone": "Asia/Calcutta",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": " ",
-            "deactivated": " "
+            "activated": " ",
+            "deactivated": " "
         }
     },
     "network": {
-        "format-wifi": "",
+        "format-wifi": " ",
         "format-ethernet": "",
         "tooltip-format": "{essid} {signalStrength}%\n{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP)",
@@ -78,7 +82,7 @@
     "pulseaudio#microphone": {
         "format": "{format_source}",
         "format-source": " {volume}%",
-        "format-source-muted": "",
+        "format-source-muted": " ",
         "on-click": "pamixer --default-source -t",
         "on-scroll-up": "pamixer --default-source -i 5",
         "on-scroll-down": "pamixer --default-source -d 5",

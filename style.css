@@ -1,85 +1,58 @@
 @import url("/home/null/.cache/wal/colors-waybar.css");
+
 * {
-    border: none;
-    border-radius: 20px;
-    font-family:MesloLGS Nerd Font;
-    font-weight: bold;
-    font-size: 14px;
-    min-height: 0;
+  font-family: JetBrainsMono Nerd Font;
+  font-weight: bold;
+  font-size: 13px;
+  min-height: 0;
 }
 
 window#waybar {
-    background: rgba(0,0,0,0);
-    color: @foreground;
+  background: rgba(0, 0, 0, 0.8);
+  color: @foreground;
+  border-radius: 10px;
+}
+
+#workspaces button {
+  color: @color2;
 }
 
 #workspaces button.active {
-    color: @foreground;
+  color: @foreground;
 }
 
 #workspaces button.focused {
-    color: @foreground;
+  color: @foreground;
+  background: transparent;
 }
 
-/* #window, */
+#workspaces button.urgent {
+  color: #11111b;
+  background: transparent;
+}
+
+#workspaces button:hover {
+  background: transparent;
+}
+
 #clock,
-#bluetooth,
+#idle_inhibitor #bluetooth,
 #pulseaudio,
 #network,
+#bluetooth,
 #workspaces,
 #tray {
-    margin-top: 3px;
-    background: rgba(30,30,30,0.6);
-    padding: 5px 10px;
-    border: 2px solid @foreground;
+  background: transparent;
 }
 
 tooltip {
-    background: rgba(30,30,30,0.9);
-    border-radius: 10px;
-    border: 2px solid @foreground;
-}
-#bluetooth {
-    border-radius: 20px;
-    margin-right: 5px;
+  background: @backround;
 }
 
-#tray {
-    margin-right: 5px;
-    padding: 5px 7px; 
+#workspaces * {
+  padding: 2px 3px;
 }
 
-#workspaces  * {
-    padding: 0px 3px;
-}
-#workspaces {
-    margin-left: 5px;
-    padding-left : 0px;
-    padding-right: 5px;
-}
-
-/* #window { */
-/*     padding: 0px 25px; */
-/* } */
-
-#network {
-    margin-right: 5px;
-    padding-left: 7px;
-    padding-right: 14px;
-}
-
-#pulseaudio {
-    border-radius: 20px 0px 0px 20px;
-    border-right: 0px;
-}
-
-#pulseaudio.microphone {
-    border-radius: 0px 20px 20px 0px;
-    margin-right: 5px;
-    border-left: 0px;
-    border-right: 2px solid @foreground;
-}
-
-#idle_inhibitor {
-    margin-right: 20px;
+#clock {
+  margin-right: 6px;
 }
