@@ -7,8 +7,8 @@
     "gtk-layer-shell": true,
     "spacing": 12,
     "margin-bottom": 4,
-    "margin-left": 2,
-    "margin-right": 2,
+    "margin-left": 4,
+    "margin-right": 4,
     "modules-left": [
         "hyprland/workspaces"
     ],
