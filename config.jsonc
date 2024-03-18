@@ -37,7 +37,7 @@
         }
     },
     "clock": {
-        "format": "{: %R}",
+        "format": " {:%I:%M %p}",
         "timezone": "Asia/Calcutta",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
