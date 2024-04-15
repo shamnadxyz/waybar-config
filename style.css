@@ -1,14 +1,14 @@
-@import url("/home/null/.cache/wal/colors-waybar.css");
+@import url("../../.cache/wal/colors-waybar.css");
 
 * {
   font-family: JetBrainsMono Nerd Font;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 12px;
   min-height: 0;
 }
 
 window#waybar {
-  background: rgba(9,7,12,0.8);
+  background: rgba(30,27,30,0.8);
   color: @foreground;
   border-radius: 10px;
 }
