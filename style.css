@@ -8,7 +8,7 @@
 }
 
 window#waybar {
-  background: rgba(30,27,30,0.8);
+  background: rgba(10,13,12,0.8);
   color: @foreground;
   border-radius: 10px;
 }

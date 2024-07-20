@@ -1,94 +1,105 @@
 {
-    "layer": "top",
-    "position": "bottom",
-    "mod": "dock",
-    "exclusive": true,
-    "passthrough": false,
-    "gtk-layer-shell": true,
-    "spacing": 12,
-    "margin-bottom": 4,
-    "margin-left": 4,
-    "margin-right": 4,
-    "modules-left": [
-        "hyprland/workspaces"
-    ],
-    "modules-center": [],
-    "modules-right": [
-        "idle_inhibitor",
-        "tray",
-        "network",
-        "bluetooth",
-        "pulseaudio",
-        "pulseaudio#microphone",
-        "clock"
-    ],
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "format": "{icon}",
-        "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
-            // "active": "",
-            // "default": ""
-            "default": ""
-        }
-    },
-    "clock": {
-        "format": " {:%I:%M %p}",
-        "timezone": "Asia/Calcutta",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": " ",
-            "deactivated": " "
-        }
-    },
-    "network": {
-        "format-wifi": " ",
-        "format-ethernet": "",
-        "tooltip-format": "{essid} {signalStrength}%\n{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "bluetooth": {
-        "format": "",
-        "format-disabled": "",
-        "format-connected": " {device_alias}",
-        "format-connected-battery": " {device_alias} {device_battery_percentage}%"
-    },
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-muted": "",
-        "on-click": "pamixer -t",
-        "on-scroll-up": "pamixer -i 5",
-        "on-scroll-down": "pamixer -d 5",
-        "scroll-step": 5,
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", " ", " "]
-        }
-    },
-    "pulseaudio#microphone": {
-        "format": "{format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": " ",
-        "on-click": "pamixer --default-source -t",
-        "on-scroll-up": "pamixer --default-source -i 5",
-        "on-scroll-down": "pamixer --default-source -d 5",
-        "scroll-step": 5
-    },
-    "tray": {
-        "icon-size": 14
+  "layer": "top",
+  "position": "bottom",
+  "mod": "dock",
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "spacing": 12,
+  "margin-bottom": 4,
+  "margin-left": 4,
+  "margin-right": 4,
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [],
+  "modules-right": [
+    "idle_inhibitor",
+    "battery",
+    "tray",
+    "network",
+    "bluetooth",
+    "pulseaudio",
+    "pulseaudio#microphone",
+    "clock"
+  ],
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      // "active": "",
+      // "default": ""
+      "default": ""
     }
+  },
+  "clock": {
+    "format": " {:%I:%M %p}",
+    "timezone": "Asia/Calcutta",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": " ",
+      "deactivated": " "
+    }
+  },
+  "network": {
+    "format-wifi": " ",
+    "format-ethernet": "",
+    "tooltip-format": "{essid} {signalStrength}%\n{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP)",
+    "format-disconnected": "",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} {device_battery_percentage}%"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "on-click": "pamixer -t",
+    "on-scroll-up": "pamixer -i 5",
+    "on-scroll-down": "pamixer -d 5",
+    "scroll-step": 5,
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", " ", " "]
+    }
+  },
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": " ",
+    "on-click": "pamixer --default-source -t",
+    "on-scroll-up": "pamixer --default-source -i 1",
+    "on-scroll-down": "pamixer --default-source -d 1",
+    "scroll-step": 5
+  },
+  "tray": {
+    "icon-size": 14
+  },
+  "battery": {
+    "interval": 60,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-icons": [" ", " ", " ", " ", " "],
+    "max-length": 25
+  }
 }
