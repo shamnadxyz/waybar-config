@@ -1,40 +1,33 @@
 {
   "layer": "top",
-  "position": "bottom",
-  "mod": "dock",
+  "position": "top",
+  "mode": "dock",
   "exclusive": true,
-  "passthrough": false,
-  "gtk-layer-shell": true,
-  "spacing": 12,
-  "margin-bottom": 4,
-  "margin-left": 4,
-  "margin-right": 4,
   "modules-left": [
     "hyprland/workspaces"
   ],
-  "modules-center": [],
+  "modules-center": ["clock"],
   "modules-right": [
-    "idle_inhibitor",
     "tray",
+    "idle_inhibitor",
     "network",
     "bluetooth",
     "battery",
     "backlight",
     "pulseaudio",
-    "pulseaudio#microphone",
-    "clock"
+    "pulseaudio#microphone"
   ],
     "hyprland/workspaces": {
     "disable-scroll": true,
     "format": "{icon}",
     "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
-      // "active": "",
-      // "default": ""
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " ",
+      "5": " ",
+      // "active": " ",
+      "default": " "
     }
   },
   "clock": {
@@ -54,7 +47,7 @@
     "format-ethernet": "",
     "tooltip-format": "{ifname} {essid} {signalStrength}%\n{ipaddr} via {gwaddr} ",
     "format-linked": "{ifname} (No IP)",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "format-alt": " ",
     "format-disconnected": ""
   },
   "bluetooth": {
@@ -71,13 +64,13 @@
     "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
     "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
       "car": "",
-      "default": ["", "", ""]
+      "default": ["", " ", " "]
     }
   },
   "pulseaudio#microphone": {
@@ -135,4 +128,3 @@
     "on-scroll-down" : "brightnessctl s 1%- --min-value=4800"
   }
 }
-

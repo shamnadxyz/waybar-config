@@ -4,31 +4,28 @@
   font-family: Hack Nerd Font;
   font-weight: bold;
   font-size: 16px;
-  min-height: 0;
 }
 
 window#waybar {
-  background: rgba(10,13,12,0.8);
+  background: transparent;
   color: @foreground;
-  border-radius: 10px;
 }
 
 #workspaces button {
   color: @color2;
+  background: transparent;
 }
 
-#workspaces button.active {
-  color: @foreground;
+#workspaces button.visible {
+  color: @background;
 }
 
 #workspaces button.focused {
-  color: @foreground;
-  background: transparent;
+  color: @background;
 }
 
 #workspaces button.urgent {
   color: #11111b;
-  background: transparent;
 }
 
 #workspaces button:hover {
@@ -38,23 +35,25 @@ window#waybar {
 #clock,
 #idle_inhibitor,
 #pulseaudio,
-#battery,
-#backlight,
 #network,
 #bluetooth,
 #workspaces,
+#backlight,
+#battery,
 #tray {
-  background: transparent;
+  color: @background;
+  border-radius: 8px;
+  padding: 0px 8px;
+  background-color: @foreground;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-bottom: 2px;
+  margin-top: 6px;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
 }
 
 tooltip {
-  background: @background;
-}
-
-#workspaces * {
-  padding: 2px 3px;
-}
-
-#clock {
-  margin-right: 6px;
+  border-radius: 8px;
+  color: @background;
+  background-color: @foreground;
 }
