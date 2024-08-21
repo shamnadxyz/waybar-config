@@ -1,9 +1,9 @@
 @import url("../../.cache/wal/colors-waybar.css");
 
 * {
-  font-family: JetBrainsMono Nerd Font;
+  font-family: Hack Nerd Font;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 16px;
   min-height: 0;
 }
 
@@ -38,6 +38,8 @@ window#waybar {
 #clock,
 #idle_inhibitor,
 #pulseaudio,
+#battery,
+#backlight,
 #network,
 #bluetooth,
 #workspaces,
