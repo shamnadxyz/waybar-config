@@ -54,7 +54,7 @@
     "format-ethernet": "",
     "tooltip-format": "{ifname} {essid} {signalStrength}%\n{ipaddr} via {gwaddr} ",
     "format-linked": "{ifname} (No IP)",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "format-alt": " ",
     "format-disconnected": ""
   },
   "bluetooth": {
