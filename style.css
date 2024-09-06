@@ -8,7 +8,7 @@
 
 window#waybar {
   background: transparent;
-  color: @foreground;
+  color: @background;
 }
 
 #workspaces button {
@@ -17,11 +17,11 @@ window#waybar {
 }
 
 #workspaces button.visible {
-  color: @background;
+  color: @foreground;
 }
 
 #workspaces button.focused {
-  color: @background;
+  color: @foreground;
 }
 
 #workspaces button.urgent {
@@ -41,19 +41,19 @@ window#waybar {
 #backlight,
 #battery,
 #tray {
-  color: @background;
+  color: @foreground;
   border-radius: 8px;
+  border: solid @foreground 2px;
   padding: 0px 8px;
-  background-color: @foreground;
+  background: rgba(10,13,21,0.8);
   margin-left: 4px;
   margin-right: 4px;
   margin-bottom: 2px;
   margin-top: 6px;
-  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
 }
 
 tooltip {
   border-radius: 8px;
-  color: @background;
-  background-color: @foreground;
+  color: @foreground;
+  background-color: @background;
 }
