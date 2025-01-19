@@ -1,40 +1,37 @@
 {
   "layer": "top",
-  "position": "bottom",
-  "mod": "dock",
+  "reload_style_on_change": true,
+  "position": "top",
+  //"margin-left": 10,
+  //"margin-right": 10,
+  "margin-bottom": 8,
+  "mode": "dock",
   "exclusive": true,
-  "passthrough": false,
-  "gtk-layer-shell": true,
-  "spacing": 12,
-  "margin-bottom": 4,
-  "margin-left": 4,
-  "margin-right": 4,
   "modules-left": [
     "hyprland/workspaces"
   ],
-  "modules-center": [],
+  "modules-center": ["clock"],
   "modules-right": [
     "idle_inhibitor",
     "tray",
-    "network",
+    //"network",
     "bluetooth",
     "battery",
     "backlight",
     "pulseaudio",
-    "pulseaudio#microphone",
-    "clock"
+    "pulseaudio#microphone"
   ],
     "hyprland/workspaces": {
     "disable-scroll": true,
     "format": "{icon}",
     "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
-      // "active": "",
-      // "default": ""
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " ",
+      "5": " ",
+      // "active": " ",
+      "default": " "
     }
   },
   "clock": {
@@ -60,8 +57,8 @@
   "bluetooth": {
     "format": "",
     "format-disabled": "",
-    "format-connected": " {device_alias}",
-    "format-connected-battery": " {device_alias} {device_battery_percentage}%"
+    "format-connected": "",
+    "tooltip-format": "{device_alias} {device_battery_percentage}%",
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
@@ -71,13 +68,13 @@
     "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
     "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
       "car": "",
-      "default": ["", "", ""]
+      "default": ["", " ", " "]
     }
   },
   "pulseaudio#microphone": {
@@ -90,7 +87,8 @@
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%-"
   },
   "tray": {
-    "icon-size": 14
+    "icon-size": 14,
+    "spacing": 12,
   },
   "battery": {
     "format": "{icon} {capacity}%",
@@ -135,4 +133,3 @@
     "on-scroll-down" : "brightnessctl s 1%- --min-value=4800"
   }
 }
-

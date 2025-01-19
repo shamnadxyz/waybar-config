@@ -1,34 +1,36 @@
 @import url("../../.cache/wal/colors-waybar.css");
 
 * {
-  font-family: Hack Nerd Font;
+  font-family: JetBrainsMono Nerd Font;
   font-weight: bold;
   font-size: 16px;
-  min-height: 0;
 }
 
 window#waybar {
-  background: rgba(10,13,12,0.8);
-  color: @foreground;
+  background: rgba(15,10,36,0.8);
+  border: solid @foreground 1px;
   border-radius: 10px;
+  color: @background;
 }
 
 #workspaces button {
   color: @color2;
+  background: transparent;
+  padding: 0px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
-#workspaces button.active {
+#workspaces button.visible {
   color: @foreground;
 }
 
 #workspaces button.focused {
   color: @foreground;
-  background: transparent;
 }
 
 #workspaces button.urgent {
   color: #11111b;
-  background: transparent;
 }
 
 #workspaces button:hover {
@@ -38,23 +40,18 @@ window#waybar {
 #clock,
 #idle_inhibitor,
 #pulseaudio,
-#battery,
-#backlight,
 #network,
 #bluetooth,
 #workspaces,
+#backlight,
+#battery,
 #tray {
-  background: transparent;
+  color: @foreground;
+  padding: 8px;
 }
 
 tooltip {
-  background: @background;
-}
-
-#workspaces * {
-  padding: 2px 3px;
-}
-
-#clock {
-  margin-right: 6px;
+  border-radius: 8px;
+  color: @foreground;
+  background-color: @background;
 }
