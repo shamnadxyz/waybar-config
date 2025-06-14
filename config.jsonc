@@ -7,9 +7,6 @@
   "passthrough": false,
   "gtk-layer-shell": true,
   "spacing": 6,
-  // "margin-bottom": 4,
-  // "margin-left": 4,
-  // "margin-right": 4,
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/window"
@@ -38,14 +35,14 @@
       "4": "",
       "5": "",
       // "active": "",
-      // "default": ""
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "*": 1,
+      "*": 2,
+      "*": 3,
     }
   },
-  // "clock": {
-  //   "format": "{:%I:%M %p}",
-  //   "timezone": "Asia/Calcutta",
-  //   "tooltip-format": "<big>{:%e %B %Y }</big>\n<tt><small>{calendar}</small></tt>"
-  // },
   "clock": {
     "interval": 1,
     "format": " {:%d/%m/%y  %I:%M %p}",
@@ -72,7 +69,7 @@
     }
   },
   "hyprland/window": {
-    "max-length": 130,
+    "max-length": 90,
     "separate-outputs": true
   },
   "idle_inhibitor": {
