@@ -103,7 +103,7 @@
 	},
 	"pulseaudio": {
 		"format": "{icon} {volume}%",
-		"format-muted": "",
+		"format-muted": "  ",
 		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
 		"reverse-scrolling": true,
 		"on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+",
@@ -117,7 +117,7 @@
 			"car": "",
 			"default": [
 				"",
-				" ",
+				"",
 				" "
 			]
 		}
