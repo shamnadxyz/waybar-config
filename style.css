@@ -8,7 +8,7 @@
 }
 
 window#waybar {
-	background: rgba(16, 19, 19, 0.7);
+	background: rgba(13,22,37,0.7);
 	border: 1px solid rgba(255, 255, 255, 0.6);
 	border-radius: 16px;
 	color: @foreground;
@@ -107,7 +107,14 @@ window#waybar {
 }
 
 tooltip {
+	color: @foreground;
 	background: @background;
+	border-radius: 16px;
+	border: 1px solid @foreground;
+}
+
+tooltip * {
+	padding: 5px;
 }
 
 /* Power menu styles */
@@ -120,12 +127,11 @@ menu {
 
 /* Style each menu item */
 menuitem {
-	margin: 2px 0;
+	margin: 2px;
 	color: @foreground;
 	background: rgba(255, 255, 255, 0.1);
 	border-radius: 16px;
 	border: 1px solid rgba(255, 255, 255, 0.1);
-	padding: 4px 8px;
 }
 
 menuitem:hover {
