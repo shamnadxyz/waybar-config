@@ -141,60 +141,39 @@
 		"spacing": 6
 	},
 	"battery": {
-		"states": {
-			// "good": 95,
-			"warning": 30,
-			"critical": 15
-		},
 		"format": "{icon} {capacity}%",
-		"format-full": "{icon} {capacity}%",
-		"format-charging": " {capacity}%",
-		"format-plugged": " {capacity}%",
-		"format-alt": "{icon} {time}",
-		// "format-good": "", // An empty format will hide the module
-		// "format-full": "",
-		"format-icons": [
-			"",
-			"",
-			"",
-			"",
-			""
-		]
+		"format-icons": {
+			"charging": [
+				"󰢜",
+				"󰂆",
+				"󰂇",
+				"󰂈",
+				"󰢝",
+				"󰂉",
+				"󰢞",
+				"󰂊",
+				"󰂋",
+				"󰂅"
+			],
+			"default": [
+				"󰁺",
+				"󰁻",
+				"󰁼",
+				"󰁽",
+				"󰁾",
+				"󰁿",
+				"󰂀",
+				"󰂁",
+				"󰂂",
+				"󰁹"
+			]
+		},
+		"interval": 30,
+		"states": {
+			"warning": 30,
+			"critical": 20
+		}
 	},
-	// "battery": {
-	// 	"format": "{icon} {capacity}%",
-	// 	"format-icons": {
-	// 		"charging": [
-	// 			"󰢜",
-	// 			"󰂆",
-	// 			"󰂇",
-	// 			"󰂈",
-	// 			"󰢝",
-	// 			"󰂉",
-	// 			"󰢞",
-	// 			"󰂊",
-	// 			"󰂋",
-	// 			"󰂅"
-	// 		],
-	// 		"default": [
-	// 			"󰁺",
-	// 			"󰁻",
-	// 			"󰁼",
-	// 			"󰁽",
-	// 			"󰁾",
-	// 			"󰁿",
-	// 			"󰂀",
-	// 			"󰂁",
-	// 			"󰂂",
-	// 			"󰁹"
-	// 		]
-	// 	},
-	// 	"interval": 30,
-	// 	"states": {
-	// 		"warning": 30,
-	// 		"critical": 20
-	// 	}
-	// },
 	"backlight": {
 		"device": "intel_backlight",
 		"format": "{icon} {percent}%",
