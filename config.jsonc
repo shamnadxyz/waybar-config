@@ -12,6 +12,7 @@
 	"margin-right": 3,
 	"modules-left": [
 		"hyprland/workspaces",
+		"custom/media",
 		"hyprland/window"
 	],
 	"modules-center": [
@@ -225,6 +226,20 @@
 			"Suspend": "powermenu Suspend",
 			"Hibernate": "powermenu Hibernate",
 			"Lock": "powermenu Lock"
+		}
+	},
+	"custom/media": {
+		"format": "{icon} {text}",
+		"return-type": "json",
+		"max-length": 40,
+		"escape": true,
+		"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null",
+		"menu": "on-click",
+		"menu-file": "$HOME/.config/waybar/mediaplayer.xml",
+		"menu-actions": {
+			"play/pause": "mpvctl play/pause",
+			"next": "mpvctl next",
+			"prev": "mpvctl prev"
 		}
 	},
 	"privacy": {
