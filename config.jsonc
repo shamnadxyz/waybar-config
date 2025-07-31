@@ -221,11 +221,9 @@
 		"menu": "on-click",
 		"menu-file": "$HOME/.config/waybar/power_menu.xml",
 		"menu-actions": {
-			"poweroff": "powermenu poweroff",
-			"reboot": "powermenu reboot",
-			"suspend": "powermenu suspend",
-			"hibernate": "powermenu hibernate",
-			"lock": "powermenu lock"
+			"poweroff": "systemctl poweroff",
+			"reboot": "systemctl reboot",
+			"suspend": "systemctl suspend"
 		}
 	},
 	"custom/media": {
