@@ -2,7 +2,7 @@
 <interface>
 	<object class="GtkMenu" id="menu">
 		<child>
-			<object class="GtkMenuItem" id="play/pause">
+			<object class="GtkMenuItem" id="play-pause">
 				<property name="label"> Play/Pause</property>
 			</object>
 		</child>
