@@ -17,13 +17,11 @@ from typing import List, Optional
 import time
 
 logger = logging.getLogger(__name__)
-
 # Constants
 PLAYING_STATUS = "Playing"
 SPOTIFY_PLAYER = "spotify"
 AD_TRACK_ID = ":ad:"
 STATIC_PRIORITY = ["mpv", "brave"]
-
 # File to store current player information
 CURRENT_PLAYER_FILE = os.path.join(
     tempfile.gettempdir(), f"waybar-mediaplayer-current-{os.getuid()}"
@@ -94,10 +92,8 @@ class PlayerManager:
     def write_output(self, text: str, player: Player):
         """Write formatted JSON output to stdout and update current player file."""
         logger.debug(f"Writing output: {text}")
-
         # Update current player file
         self.update_current_player_file(player)
-
         output = {
             "text": text,
             "class": f"custom-{player.props.player_name}",
@@ -125,7 +121,6 @@ class PlayerManager:
         """Clear the output and current player file."""
         sys.stdout.write("\n")
         sys.stdout.flush()
-
         # Clear current player file
         try:
             os.remove(CURRENT_PLAYER_FILE)
@@ -133,13 +128,27 @@ class PlayerManager:
         except FileNotFoundError:
             pass
 
-    def on_playback_status_changed(self, player: Player, status: str, _=None):
+    def on_playback_status_changed(self, player: Player, status, _=None):
         """Handle playback status changes."""
         logger.debug(
             f"Playback status changed for player {player.props.player_name}: {status}"
         )
         self.update_activity_time(player)  # Track activity
-        self.on_metadata_changed(player, player.props.metadata)
+        # Check if player is stopped and is the current player
+        if (
+            status == Playerctl.PlaybackStatus.STOPPED
+            and self.current_player
+            and player.props.player_name == self.current_player.props.player_name
+        ):
+            logger.debug(
+                f"Player {player.props.player_name} stopped, checking for other players"
+            )
+            # Clear the current player first
+            self.clear_output()
+            # Then try to show another player if available
+            self.show_most_important_player()
+        else:
+            self.on_metadata_changed(player, player.props.metadata)
 
     def update_activity_time(self, player: Player):
         """Update the last activity timestamp for a player."""
@@ -149,21 +158,18 @@ class PlayerManager:
         """Get the most recently active player from a list."""
         if not players:
             return None
-
         # Find players with activity timestamps
         active_players = [
             p for p in players if p.props.player_name in self.last_activity
         ]
         if not active_players:
             return players[0]  # Fallback to first player
-
         # Sort by most recent activity
         sorted_players = sorted(
             active_players,
             key=lambda p: self.last_activity[p.props.player_name],
             reverse=True,
         )
-
         # Return most recent player
         return sorted_players[0]
 
@@ -179,23 +185,18 @@ class PlayerManager:
         """Get the first player that is currently playing."""
         players = self.get_players()
         logger.debug(f"Getting first playing player from {len(players)} players")
-
         if not players:
             logger.debug("No players found")
             return None
-
         # Get all playing players
         playing_players = [p for p in players if p.props.status == PLAYING_STATUS]
-
         if playing_players:
             # Return most recently active playing player
             return self.get_most_recent_player(playing_players)
-
         # If none playing, get most recently active player
         recent_player = self.get_most_recent_player(players)
         if recent_player:
             return recent_player
-
         # Fallback to static priority
         return self.get_priority_player(players)
 
@@ -225,12 +226,10 @@ class PlayerManager:
         """Handle metadata changes and update output."""
         logger.debug(f"Metadata changed for player {player.props.player_name}")
         self.update_activity_time(player)  # Track activity
-
         player_name = player.props.player_name
         artist = self.escape_if_string(player.get_artist())
         title = self.escape_if_string(player.get_title())
         track_info = ""
-
         # Handle Spotify advertisements
         if (
             player_name == SPOTIFY_PLAYER
@@ -242,12 +241,10 @@ class PlayerManager:
             track_info = f"{artist} - {title}"
         elif title:
             track_info = title
-
         # Add playback status icons
         if track_info:
             icon = "" if player.props.status == PLAYING_STATUS else ""
             track_info = f"{icon}  {track_info} "
-
         # Only print output if this is the most important player
         if self.is_most_important_player(player) and track_info:
             self.write_output(track_info, player)
@@ -277,14 +274,13 @@ class PlayerManager:
         """Handle player disappearance."""
         player_name = player.props.player_name
         logger.info(f"Player {player_name} has vanished")
-
         # Clean up activity tracking
         if player_name in self.last_activity:
             del self.last_activity[player_name]
-
-        # If this was the current player, clear the file
+        # If this was the current player, clear the file and show next important player
         if self.current_player and self.current_player.props.player_name == player_name:
             self.clear_output()
+            self.show_most_important_player()
         else:
             self.show_most_important_player()
 
@@ -298,7 +294,6 @@ def perform_action(action: str):
     except (FileNotFoundError, json.JSONDecodeError, KeyError):
         logger.warning("No current player information found")
         return
-
     # Execute the playerctl command for the specific player
     cmd = ["playerctl", "--player", player_name, action]
     logger.info(f"Executing: {' '.join(cmd)}")
@@ -333,12 +328,10 @@ def parse_arguments():
 def main():
     """Main entry point."""
     arguments = parse_arguments()
-
     # If action is provided, perform it and exit
     if arguments.action:
         perform_action(arguments.action)
         return
-
     # Initialize logging
     if arguments.enable_logging:
         logfile = os.path.join(
@@ -349,15 +342,12 @@ def main():
             level=logging.DEBUG,
             format="%(asctime)s %(name)s %(levelname)s:%(lineno)d %(message)s",
         )
-
     logger.setLevel(max((3 - arguments.verbose) * 10, 0))
     logger.info("Creating player manager")
-
     if arguments.player:
         logger.info(f"Filtering for player: {arguments.player}")
     if arguments.exclude:
         logger.info(f"Exclude player {arguments.exclude}")
-
     player_manager = PlayerManager(arguments.player, arguments.exclude)
     player_manager.run()
 
