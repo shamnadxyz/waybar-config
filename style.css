@@ -8,7 +8,7 @@
 }
 
 window#waybar {
-	background: rgba(13,22,37,0.7);
+	background: rgba(21,21,27,0.7);
 	border: 1px solid rgba(255, 255, 255, 0.6);
 	border-radius: 16px;
 	color: @foreground;
@@ -67,8 +67,18 @@ window#waybar {
 
 #battery.charging,
 #battery.plugged {
-	color: #004800;
-	background-color: #A0FFA0;
+	color: #A0FFA0;
+	background-color: rgba(160, 255, 160, 0.2);
+}
+
+#battery.critical:not(.charging) {
+	background-color: rgba(255, 160, 160, 0.2);
+	color: #FFA0A0;
+	animation-name: blink;
+	animation-duration: 0.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
 
 /* Custom power button */
@@ -79,16 +89,6 @@ window#waybar {
 	background: rgba(255, 255, 255, 0.1);
 	border-radius: 16px;
 	border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-#battery.critical:not(.charging) {
-	background-color: #FFA0A0;
-	color: #480000;
-	animation-name: blink;
-	animation-duration: 0.5s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
 }
 
 @keyframes blink {
