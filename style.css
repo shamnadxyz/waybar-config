@@ -1,4 +1,4 @@
-@import url("../../.cache/wal/colors-waybar.css");
+@import "mocha.css";
 
 * {
 	font-family: Hack Nerd Font;
@@ -8,10 +8,10 @@
 }
 
 window#waybar {
-	background: rgba(21,21,27,0.7);
-	border: 1px solid rgba(255, 255, 255, 0.6);
+	background: alpha(@base, 0.7);
+	border: 1px solid alpha(@text, 0.6);
 	border-radius: 16px;
-	color: @foreground;
+	color: @text;
 }
 
 #workspaces * {
@@ -19,22 +19,21 @@ window#waybar {
 }
 
 #workspaces button {
-	color: @color5;
-	box-shadow: inset 0 -3px transparent;
+	color: @blue;
 	background-color: transparent;
 }
 
 #workspaces button.active {
-	color: @foreground;
+	color: @text;
 }
 
 #workspaces button.focused {
-	color: @foreground;
+	color: @text;
 	background: transparent;
 }
 
 #workspaces button.urgent {
-	color: @background;
+	color: @red;
 	background: transparent;
 }
 
@@ -57,23 +56,23 @@ window#waybar {
 #temperature,
 #custom-media,
 #workspaces {
-	color: @foreground;
-	box-shadow: inset 0 -1px 5px rgba(0, 0, 0, 0.1);
-	background: rgba(255, 255, 255, 0.1);
+	color: @text;
+	box-shadow: inset 0 -1px 10px alpha(@text, 0.1);
+	background: alpha(@text, 0.1);
 	border-radius: 16px;
-	border: 1px solid rgba(255, 255, 255, 0.1);
+	border: 1px solid alpha(@text, 0.1);
 	padding: 2px 8px;
 }
 
 #battery.charging,
 #battery.plugged {
-	color: #A0FFA0;
-	background-color: rgba(160, 255, 160, 0.2);
+	color: @green;
+	background-color: alpha(@green, 0.2);
 }
 
 #battery.critical:not(.charging) {
-	background-color: rgba(255, 160, 160, 0.2);
-	color: #FFA0A0;
+	background-color: alpha(@red, 0.2);
+	color: @red;
 	animation-name: blink;
 	animation-duration: 0.5s;
 	animation-timing-function: linear;
@@ -85,21 +84,21 @@ window#waybar {
 #custom-power {
 	padding: 2px 13px;
 	padding-left: 10px;
-	box-shadow: inset 0 -1px 5px rgba(0, 0, 0, 0.1);
-	background: rgba(255, 255, 255, 0.1);
+	box-shadow: inset 0 -1px 10px alpha(@text, 0.1);
+	background: alpha(@text, 0.1);
 	border-radius: 16px;
-	border: 1px solid rgba(255, 255, 255, 0.1);
+	border: 1px solid alpha(@text, 0.1);
 }
 
 @keyframes blink {
 	to {
-		background-color: #BF616A;
-		color: #B5E8E0;
+		background-color: @red;
+		color: @teal;
 	}
 }
 
 #window {
-	color: @foreground;
+	color: @text;
 }
 
 #privacy {
@@ -107,10 +106,10 @@ window#waybar {
 }
 
 tooltip {
-	color: @foreground;
-	background: @background;
+	color: @text;
+	background: @base;
 	border-radius: 16px;
-	border: 1px solid @foreground;
+	border: 1px solid alpha(@text, 0.5);
 }
 
 tooltip * {
@@ -119,28 +118,28 @@ tooltip * {
 
 /* Power menu styles */
 menu {
-	color: @foreground;
-	box-shadow: inset 0 -1px 5px rgba(0, 0, 0, 0.1);
-	background: @background;
+	color: @text;
+	box-shadow: inset 0 -1px 10px alpha(@text, 0.1);
+	background: @base;
 	border-radius: 16px;
 }
 
 /* Style each menu item */
 menuitem {
 	margin: 2px;
-	color: @foreground;
-	background: rgba(255, 255, 255, 0.1);
+	color: @text;
+	background: alpha(@text, 0.1);
 	border-radius: 16px;
-	border: 1px solid rgba(255, 255, 255, 0.1);
+	border: 1px solid alpha(@text, 0.1);
 }
 
 menuitem:hover {
-	background-color: @foreground;
-	color: @background;
+	background-color: @text;
+	color: @base;
 }
 
 menuitem:checked {
-	background-color: rgba(136, 192, 208, 0.2);
-	color: @color4;
+	background-color: alpha(@blue, 0.2);
+	color: @mauve;
 	font-weight: bold;
 }
