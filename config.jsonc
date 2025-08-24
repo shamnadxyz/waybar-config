@@ -210,14 +210,19 @@
 		}
 	},
 	"privacy": {
+		"icon-spacing": 0,
 		"icon-size": 10,
-		"spacing": 6,
+		"transition-duration": 250,
 		"modules": [
 			{
-				"type": "audio-in"
+				"type": "screenshare",
+				"tooltip": true,
+				"tooltip-icon-size": 10
 			},
 			{
-				"type": "screenshare"
+				"type": "audio-in",
+				"tooltip": true,
+				"tooltip-icon-size": 10
 			}
 		]
 	},
