@@ -13,7 +13,6 @@
 	"margin-right": 3,
 	"modules-left": [
 		"hyprland/workspaces",
-		// "hyprland/window",
 		"mpd",
 		"custom/media"
 	],
@@ -72,10 +71,6 @@
 			"on-scroll-up": "shift_up",
 			"on-scroll-down": "shift_down"
 		}
-	},
-	"hyprland/window": {
-		"max-length": 90,
-		"separate-outputs": true
 	},
 	"idle_inhibitor": {
 		"format": "{icon}",
