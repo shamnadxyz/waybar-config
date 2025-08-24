@@ -1,4 +1,4 @@
-@import "mocha.css";
+@import "colors.css";
 
 * {
 	font-family: Hack Nerd Font;
@@ -8,10 +8,10 @@
 }
 
 window#waybar {
-	background: alpha(@base, 0.7);
-	border: 1px solid alpha(@text, 0.6);
+	background: alpha(@background, 0.8);
+	border: 1px solid alpha(@foreground, 0.6);
 	border-radius: 16px;
-	color: @text;
+	color: @foreground;
 }
 
 #workspaces * {
@@ -19,16 +19,16 @@ window#waybar {
 }
 
 #workspaces button {
-	color: @blue;
+	color: @cursor;
 	background-color: transparent;
 }
 
 #workspaces button.active {
-	color: @text;
+	color: @foreground;
 }
 
 #workspaces button.focused {
-	color: @text;
+	color: @foreground;
 	background: transparent;
 }
 
@@ -44,23 +44,25 @@ window#waybar {
 #backlight,
 #battery,
 #bluetooth,
-#group-hardware,
 #clock,
 #cpu,
+#custom-media,
+#custom-power,
+#group-hardware,
 #idle_inhibitor,
 #memory,
+#mpd,
 #network,
-#pulseaudio,
-#tray,
+#wireplumber,
 #privacy,
 #temperature,
-#custom-media,
+#tray,
 #workspaces {
-	color: @text;
-	box-shadow: inset 0 -1px 10px alpha(@text, 0.1);
-	background: alpha(@text, 0.1);
+	color: @foreground;
+	box-shadow: inset 0 -1px 10px alpha(@foreground, 0.1);
+	background: alpha(@foreground, 0.1);
 	border-radius: 16px;
-	border: 1px solid alpha(@text, 0.1);
+	border: 1px solid alpha(@foreground, 0.1);
 	padding: 2px 8px;
 }
 
@@ -80,25 +82,25 @@ window#waybar {
 	animation-direction: alternate;
 }
 
-/* Custom power button */
 #custom-power {
 	padding: 2px 13px;
 	padding-left: 10px;
-	box-shadow: inset 0 -1px 10px alpha(@text, 0.1);
-	background: alpha(@text, 0.1);
-	border-radius: 16px;
-	border: 1px solid alpha(@text, 0.1);
+}
+
+#wireplumber.sink-muted {
+	padding: 2px 6px;
+	padding-left: 4px;
 }
 
 @keyframes blink {
 	to {
 		background-color: @red;
-		color: @teal;
+		color: @background;
 	}
 }
 
 #window {
-	color: @text;
+	color: @foreground;
 }
 
 #privacy {
@@ -106,40 +108,46 @@ window#waybar {
 }
 
 tooltip {
-	color: @text;
-	background: @base;
+	color: @foreground;
+	background: alpha(@background,0.9);
 	border-radius: 16px;
-	border: 1px solid alpha(@text, 0.5);
+	border: 1px solid alpha(@foreground, 0.5);
 }
 
 tooltip * {
 	padding: 5px;
 }
 
-/* Power menu styles */
 menu {
-	color: @text;
-	box-shadow: inset 0 -1px 10px alpha(@text, 0.1);
-	background: @base;
-	border-radius: 16px;
+	color: @foreground;
+	box-shadow: inset 0 -1px 10px alpha(@foreground, 0.1);
+	background: @background;
+	border-radius: 12px;
 }
 
-/* Style each menu item */
 menuitem {
 	margin: 2px;
-	color: @text;
-	background: alpha(@text, 0.1);
-	border-radius: 16px;
-	border: 1px solid alpha(@text, 0.1);
+	color: @foreground;
+	background: alpha(@foreground, 0.1);
+	border-radius: 8px;
+	border: 1px solid alpha(@foreground, 0.1);
 }
 
 menuitem:hover {
-	background-color: @text;
-	color: @base;
+	background-color: @foreground;
+	color: @background;
 }
 
 menuitem:checked {
-	background-color: alpha(@blue, 0.2);
-	color: @mauve;
+	background-color: alpha(@foreground, 0.2);
+	color: @color4;
 	font-weight: bold;
 }
+
+separator {
+  margin: 0px;
+  background-color: transparent;
+	padding: 0px;
+  border: none;
+}
+

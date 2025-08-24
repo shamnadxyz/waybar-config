@@ -1,5 +1,7 @@
 {
 	"position": "top",
+	"ipc": false,
+	"modifier": "Mod4",
 	"reload_style_on_change": true,
 	"mod": "dock",
 	"exclusive": true,
@@ -11,8 +13,9 @@
 	"margin-right": 3,
 	"modules-left": [
 		"hyprland/workspaces",
-		"custom/media",
-		"hyprland/window"
+		// "hyprland/window",
+		"mpd",
+		"custom/media"
 	],
 	"modules-center": [
 		"clock"
@@ -27,13 +30,12 @@
 		"bluetooth",
 		"battery",
 		"backlight",
-		"pulseaudio",
-		"pulseaudio#microphone",
+		"wireplumber",
+		"wireplumber#source",
 		"privacy",
 		"custom/power"
 	],
 	"hyprland/workspaces": {
-		"disable-scroll": true,
 		"format": "{icon}",
 		"format-icons": {
 			"1": "",
@@ -41,17 +43,13 @@
 			"3": "",
 			"4": "",
 			"5": "",
+			"6": "",
 			// "active": "",
 			"default": ""
 		},
-		"persistent-workspaces": {
-			"*": 1,
-			"*": 2,
-			"*": 3
-		}
 	},
 	"clock": {
-		"interval": 1,
+		"interval": 60,
 		"format": " {:%d/%m/%y  %I:%M %p}",
 		"format-alt": " {:L%a, %B %d, %Y  %I:%M %p}",
 		"timezone": "Asia/Calcutta",
@@ -106,36 +104,6 @@
 		"tooltip-format-connected-battery": " {device_alias} {device_battery_percentage}%",
 		"max-length": 10
 	},
-	"pulseaudio": {
-		"format": "{icon} {volume}%",
-		"format-muted": "  ",
-		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-		"reverse-scrolling": true,
-		"on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+",
-		"on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
-		"format-icons": {
-			"headphone": "",
-			"hands-free": "",
-			"headset": "",
-			"phone": "",
-			"portable": "",
-			"car": "",
-			"default": [
-				"",
-				"",
-				" "
-			]
-		}
-	},
-	"pulseaudio#microphone": {
-		"format": "{format_source}",
-		"format-source": " {volume}%",
-		"format-source-muted": " ",
-		"reverse-scrolling": true,
-		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
-		"on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SOURCE@ 1%+",
-		"on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%-"
-	},
 	"tray": {
 		"icon-size": 10,
 		"spacing": 6
@@ -168,7 +136,7 @@
 				"󰁹"
 			]
 		},
-		"interval": 30,
+		"interval": 60,
 		"states": {
 			"warning": 30,
 			"critical": 20
@@ -194,22 +162,22 @@
 	},
 	"cpu": {
 		"interval": 10,
-		"format": "󰍛 {usage}%",
+		"format": "󰍛 {usage}%"
 	},
 	"memory": {
-		"interval": 10,
+		"interval": 30,
 		"format": " {used:0.1f}G"
 	},
 	"temperature": {
 		// "thermal-zone": 2,
-		// "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+		"hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
 		"critical-threshold": 80,
 		// "format-critical": "{temperatureC}°C {icon}",
 		"format": "{icon} {temperatureC}°C",
 		"format-icons": [
-			"",
+			"",
 			"",
-			""
+			""
 		],
 		"tooltip": false
 	},
@@ -220,9 +188,10 @@
 		"menu": "on-click",
 		"menu-file": "$HOME/.config/waybar/power_menu.xml",
 		"menu-actions": {
-			"poweroff": "systemctl poweroff",
-			"reboot": "systemctl reboot",
-			"suspend": "systemctl suspend"
+			"poweroff": "poweroff",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend",
+			"hibernate": "systemctl hibernate"
 		}
 	},
 	"custom/media": {
@@ -237,7 +206,7 @@
 		"menu-actions": {
 			"play-pause": "$HOME/.config/waybar/mediaplayer.py --action play-pause",
 			"next": "$HOME/.config/waybar/mediaplayer.py --action next",
-			"prev": "$HOME/.config/waybar/mediaplayer.py --action prev"
+			"previous": "$HOME/.config/waybar/mediaplayer.py --action previous"
 		}
 	},
 	"privacy": {
@@ -251,5 +220,43 @@
 				"type": "screenshare"
 			}
 		]
+	},
+	"wireplumber": {
+		"format": "{icon} {volume}%",
+		"format-muted": "  ",
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+		"reverse-scrolling": true,
+		"format-icons": [
+			"",
+			"",
+			" "
+		]
+	},
+	"wireplumber#source": {
+		"node-type": "Audio/Source",
+		"format": "󰍬 {volume}%",
+		"format-muted": " 󰍭 ",
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+		"reverse-scrolling": true,
+		"scroll-step": 5
+	},
+	"mpd": {
+		"format": " {stateIcon} {artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})  ",
+		"format-disconnected": "Disconnected ",
+		"format-stopped": "",
+		"interval": 10,
+		"state-icons": {
+			"paused": "",
+			"playing": ""
+		},
+		"on-click": "mpc toggle",
+		"menu": "on-click-right",
+		"menu-file": "$HOME/.config/waybar/mediaplayer.xml",
+		"menu-actions": {
+			"play-pause": "mpc toggle",
+			"next": "mpc next",
+			"previous": "mpc prev"
+		},
+		"tooltip": false
 	}
 }

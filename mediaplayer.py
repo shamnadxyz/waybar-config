@@ -319,7 +319,7 @@ def parse_arguments():
     )
     parser.add_argument(
         "--action",
-        choices=["play-pause", "next", "prev", "stop"],
+        choices=["play-pause", "next", "previous", "stop"],
         help="Control action to perform on the current player",
     )
     return parser.parse_args()

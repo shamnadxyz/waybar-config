@@ -12,7 +12,7 @@
 			</object>
 		</child>
 		<child>
-			<object class="GtkMenuItem" id="prev">
+			<object class="GtkMenuItem" id="previous">
 				<property name="label"> Previous</property>
 			</object>
 		</child>
